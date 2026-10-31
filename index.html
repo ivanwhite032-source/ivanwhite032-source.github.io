@@ -203,16 +203,6 @@
     padding: 20px;
     margin-top: 14px;
   }
-  select {
-    width: 100%;
-    padding: 12px;
-    margin: 6px 0 14px;
-    background: #161b22;
-    color: #e6edf3;
-    border: 1px solid #30363d;
-    border-radius: 10px;
-    font-size: 15px;
-  }
   button {
     background: linear-gradient(135deg, #0072ff, #7b2ff7);
     color: #fff;
@@ -226,12 +216,6 @@
     box-shadow: 0 6px 20px rgba(90,120,255,0.35);
   }
   button:hover { transform: translateY(-2px) scale(1.04); }
-  .result { margin-top: 16px; font-size: 22px; color: #7ee787; font-weight: bold; }
-
-  .qa { border-bottom: 1px solid #30363d; padding: 15px 0; }
-  .q { color: #00c6ff; cursor: pointer; font-weight: bold; }
-  .q:hover { color: #a371f7; }
-  .a { display: none; margin-top: 10px; color: #c9d1d9; }
 
   .ansbtn {
     display: block;
@@ -252,6 +236,13 @@
   .tipbox {
     border-left: 4px solid #7ee787;
     background: rgba(35,134,54,0.12);
+    border-radius: 0 12px 12px 0;
+    padding: 14px 16px;
+    margin: 14px 0;
+  }
+  .warnbox {
+    border-left: 4px solid #f85149;
+    background: rgba(248,81,73,0.12);
     border-radius: 0 12px 12px 0;
     padding: 14px 16px;
     margin: 14px 0;
@@ -294,9 +285,9 @@
 <nav>
   <a href="#top">🏠 Главная</a>
   <a href="#about">О Даниле</a>
+  <a href="#facts">Факты</a>
   <a href="#tiktok">Тик-ток</a>
   <a href="#games">Игры</a>
-  <a href="#swim">Плавание</a>
   <a href="#quiz">Тест</a>
   <a href="#timer">Таймер</a>
 </nav>
@@ -304,10 +295,10 @@
 <section class="hero" id="top">
   <div class="avatar">🏊‍♂️</div>
   <h1>Данил Карасев</h1>
-  <p>14-летний пловец из Вичуги. Тренируется в «Дельфине», снимает тик-токи и играет в Rust, Fortnite и CS2.</p>
+  <p>14-летний пловец из Вичуги. Тренируется в «Дельфине», учится в 10-й школе, снимает тик-токи и играет в Rust, Fortnite и CS2.</p>
   <div class="cta">
-    <a href="#quiz" class="btn-big">🎯 Пройти тест</a>
-    <a href="#about" class="btn-ghost">👤 Познакомиться</a>
+    <a href="#facts" class="btn-big">😄 Смешные факты</a>
+    <a href="#quiz" class="btn-ghost">🎯 Пройти тест</a>
   </div>
   <div class="scroll-hint">▼ листайте вниз</div>
 </section>
@@ -318,47 +309,45 @@
   <h2>👤 Знакомьтесь: Данил</h2>
   <div class="cards">
     <div class="card"><b>🎂 Кто он</b>Данил Карасев, 14 лет (2012 года рождения).</div>
-    <div class="card"><b>📍 Город</b>Вичуга, Ивановская область. Маленький город — большие мечты!</div>
-    <div class="card"><b>🏊 Спорт</b>Плавание. Тренируется в бассейне «Дельфин».</div>
+    <div class="card"><b>📍 Город</b>Вичуга, Ивановская область.</div>
+    <div class="card"><b>🏫 Школа</b>Учится в 10-й школе.</div>
+    <div class="card"><b>🏊 Спорт</b>Плавание, бассейн «Дельфин».</div>
     <div class="card"><b>🎮 Игры</b>Rust, Fortnite и CS2.</div>
     <div class="card"><b>📱 Тик-ток</b>avantisvo0d и usersnonatak.</div>
   </div>
 </section>
 
+<section id="facts">
+  <h2>😄 Факты о Даниле</h2>
+  <div class="fact"><div class="dot">🥤</div><div><b>Жадина-колбасина на сборах.</b> На сборах Данил не поделился с Максом ни колой, ни чипсами. Макс до сих пор помнит. Наверное.</div></div>
+  <div class="fact"><div class="dot">💨</div><div><b>Мастер воздуханить.</b> Как говорит сам Максим — Данил обожает воздуханить. Воздушные замки — его стихия.</div></div>
+  <div class="fact"><div class="dot">🏫</div><div><b>10-я школа.</b> Учёба, уроки, друзья — всё происходит на территории десятой школы.</div></div>
+  <div class="fact"><div class="dot">🤣</div><div><b>Козни над Александром Ивановым.</b> Данил любит пошутить над Александром Ивановым. Жертва юмора не сдаётся!</div></div>
+  <div class="quotebox">«Не делился колой? Значит, тренировал силу воли!»</div>
+</section>
+
 <section id="tiktok">
   <h2>📱 Тик-ток Данила</h2>
-  <p>У Данила два аккаунта в тик-токе:</p>
   <div class="cards">
     <div class="card"><b>🎬 avantisvo0d</b>Основной аккаунт.</div>
     <div class="card"><b>🎬 usersnonatak</b>Второй аккаунт.</div>
   </div>
-  <div class="tipbox">💡 Не забудьте подписаться, чтобы не пропустить новые видео!</div>
+  <div class="tipbox">💡 Подпишись, чтобы не пропустить новые видео!</div>
 </section>
 
 <section id="games">
-  <h2>🎮 Любимые игры Данила</h2>
+  <h2>🎮 Любимые игры</h2>
   <div class="cards">
-    <div class="card"><b>🪓 Rust</b>Хардкорная игра про выживание. Смекалка, база под контролем и нервы покрепче.</div>
-    <div class="card"><b>🪂 Fortnite</b>Динамичный батл-рояль с постройками. Реакция решает всё.</div>
+    <div class="card"><b>🪓 Rust</b>Хардкорное выживание. База под контролем и нервы покрепче.</div>
+    <div class="card"><b>🪂 Fortnite</b>Батл-рояль с постройками. Реакция решает всё.</div>
     <div class="card"><b>🎯 CS2</b>Легендарный тактический шутер. Меткость и командная игра.</div>
   </div>
-  <div class="tipbox">💡 <b>Баланс:</b> сессия после тренировки — это отдых, а вместо тренировки — уже проблема. Держим баланс!</div>
-</section>
-
-<section id="swim">
-  <h2>🏊 Плавание</h2>
-  <div class="cards">
-    <div class="card"><b>🦋 Баттерфляй</b>Самый эффектный и тяжёлый стиль.</div>
-    <div class="card"><b>💨 Кроль</b>Самый быстрый стиль.</div>
-    <div class="card"><b>🐸 Брасс</b>Лягушачьи движения ногами.</div>
-    <div class="card"><b>🔄 На спине</b>Плывёшь лёжа на спине.</div>
-  </div>
-  <div class="quotebox">«Вода не борется с пловцом. Вода учит его быть сильнее».</div>
+  <div class="tipbox">💡 Сессия после тренировки — отдых, а вместо тренировки — проблема. Держим баланс!</div>
 </section>
 
 <section id="quiz">
   <h2>🎯 Тест про Данила</h2>
-  <p>Настоящий фанат Данила ответит на все 8 вопросов!</p>
+  <p>10 вопросов. Настоящий друг ответит на все!</p>
   <div class="panel">
     <h3>1. В каком году родился Данил?</h3>
     <button class="ansbtn" onclick="check(1,this,true)">2012</button>
@@ -370,36 +359,46 @@
     <button class="ansbtn" onclick="check(2,this,true)">14</button>
     <button class="ansbtn" onclick="check(2,this,false)">17</button>
     <p id="r2"></p>
-    <h3>3. Из какого города Данил?</h3>
-    <button class="ansbtn" onclick="check(3,this,false)">Москва</button>
-    <button class="ansbtn" onclick="check(3,this,true)">Вичуга</button>
-    <button class="ansbtn" onclick="check(3,this,false)">Сочи</button>
+    <h3>3. В какой школе он учится?</h3>
+    <button class="ansbtn" onclick="check(3,this,true)">В 10-й</button>
+    <button class="ansbtn" onclick="check(3,this,false)">В 1-й</button>
+    <button class="ansbtn" onclick="check(3,this,false)">В 100-й</button>
     <p id="r3"></p>
-    <h3>4. В каком бассейне он тренируется?</h3>
-    <button class="ansbtn" onclick="check(4,this,true)">«Дельфин»</button>
-    <button class="ansbtn" onclick="check(4,this,false)">«Океан»</button>
-    <button class="ansbtn" onclick="check(4,this,false)">«Акулёнок»</button>
+    <h3>4. Чем Данил не поделился с Максом на сборах?</h3>
+    <button class="ansbtn" onclick="check(4,this,true)">Колой и чипсами</button>
+    <button class="ansbtn" onclick="check(4,this,false)">Плавательными очками</button>
+    <button class="ansbtn" onclick="check(4,this,false)">Шапочкой для бассейна</button>
     <p id="r4"></p>
-    <h3>5. В какой игре надо выживать и строить базу?</h3>
-    <button class="ansbtn" onclick="check(5,this,false)">CS2</button>
-    <button class="ansbtn" onclick="check(5,this,false)">Fortnite</button>
-    <button class="ansbtn" onclick="check(5,this,true)">Rust</button>
+    <h3>5. Что Данил любит делать по словам Максима?</h3>
+    <button class="ansbtn" onclick="check(5,this,false)">Бегать кроссы</button>
+    <button class="ansbtn" onclick="check(5,this,true)">Воздуханить</button>
+    <button class="ansbtn" onclick="check(5,this,false)">Делать уроки</button>
     <p id="r5"></p>
-    <h3>6. Какой стиль плавания самый быстрый?</h3>
-    <button class="ansbtn" onclick="check(6,this,false)">Брасс</button>
-    <button class="ansbtn" onclick="check(6,this,true)">Кроль</button>
-    <button class="ansbtn" onclick="check(6,this,false)">Баттерфляй</button>
+    <h3>6. Над кем Данил любит шутить?</h3>
+    <button class="ansbtn" onclick="check(6,this,false)">Над директором школы</button>
+    <button class="ansbtn" onclick="check(6,this,false)">Над тренером</button>
+    <button class="ansbtn" onclick="check(6,this,true)">Над Александром Ивановым</button>
     <p id="r6"></p>
-    <h3>7. Как называется один из тик-токов Данила?</h3>
-    <button class="ansbtn" onclick="check(7,this,true)">avantisvo0d</button>
-    <button class="ansbtn" onclick="check(7,this,false)">danil_pro</button>
-    <button class="ansbtn" onclick="check(7,this,false)">karasev2012</button>
+    <h3>7. В какой игре надо выживать и строить базу?</h3>
+    <button class="ansbtn" onclick="check(7,this,false)">CS2</button>
+    <button class="ansbtn" onclick="check(7,this,false)">Fortnite</button>
+    <button class="ansbtn" onclick="check(7,this,true)">Rust</button>
     <p id="r7"></p>
-    <h3>8. А как называется его второй тик-ток?</h3>
-    <button class="ansbtn" onclick="check(8,this,false)">avantisvo0d</button>
-    <button class="ansbtn" onclick="check(8,this,false)">usersniper</button>
-    <button class="ansbtn" onclick="check(8,this,true)">usersnonatak</button>
+    <h3>8. Как называется один из тик-токов Данила?</h3>
+    <button class="ansbtn" onclick="check(8,this,true)">avantisvo0d</button>
+    <button class="ansbtn" onclick="check(8,this,false)">danil_pro</button>
+    <button class="ansbtn" onclick="check(8,this,false)">karasev2012</button>
     <p id="r8"></p>
+    <h3>9. А как называется его второй тик-ток?</h3>
+    <button class="ansbtn" onclick="check(9,this,false)">avantisvo0d</button>
+    <button class="ansbtn" onclick="check(9,this,false)">usersniper</button>
+    <button class="ansbtn" onclick="check(9,this,true)">usersnonatak</button>
+    <p id="r9"></p>
+    <h3>10. В каком бассейне тренируется Данил?</h3>
+    <button class="ansbtn" onclick="check(10,this,true)">«Дельфин»</button>
+    <button class="ansbtn" onclick="check(10,this,false)">«Океан»</button>
+    <button class="ansbtn" onclick="check(10,this,false)">«Акулёнок»</button>
+    <p id="r10"></p>
   </div>
 </section>
 
@@ -415,15 +414,11 @@
 
 </main>
 
-<footer>Сайт о Даниле Карасеве · 2026 🖤<br>Вичуга → «Дельфин» → большие старты 🚀</footer>
+<footer>Сайт о Даниле Карасеве · 2026 🖤<br>Вичуга → 10-я школа → «Дельфин» → большие старты 🚀</footer>
 
 </div>
 
 <script>
-function toggle(el) {
-  var a = el.nextElementSibling;
-  a.style.display = (a.style.display === 'block') ? 'none' : 'block';
-}
 function check(n, btn, right) {
   var r = document.getElementById('r' + n);
   if (right) {
