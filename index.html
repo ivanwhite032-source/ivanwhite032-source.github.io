@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ПК Гид — всё про компьютеры</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: #0d1117;
+    color: #e6edf3;
+    line-height: 1.6;
+  }
+  header {
+    background: linear-gradient(135deg, #1a2a4a, #0d1117);
+    padding: 60px 20px;
+    text-align: center;
+    border-bottom: 2px solid #2f81f7;
+  }
+  header h1 { font-size: 2.5rem; color: #58a6ff; }
+  header p { color: #8b949e; max-width: 600px; margin: 12px auto 0; }
+  nav {
+    background: #161b22;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    padding: 12px;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
+  nav a {
+    color: #e6edf3;
+    text-decoration: none;
+    padding: 8px 16px;
+    border-radius: 8px;
+    transition: background .2s;
+  }
+  nav a:hover { background: #2f81f7; color: #fff; }
+  section { max-width: 900px; margin: 0 auto; padding: 50px 20px; }
+  h2 { color: #58a6ff; font-size: 1.8rem; margin-bottom: 20px; border-left: 4px solid #2f81f7; padding-left: 12px; }
+  .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; }
+  .card {
+    background: #161b22;
+    border: 1px solid #30363d;
+    border-radius: 12px;
+    padding: 20px;
+    transition: transform .2s, border-color .2s;
+  }
+  .card:hover { transform: translateY(-4px); border-color: #2f81f7; }
+  .card h3 { color: #79c0ff; margin-bottom: 8px; }
+  .card .price { color: #3fb950; font-weight: bold; }
+  table { width: 100%; border-collapse: collapse; margin-top: 16px; background: #161b22; border-radius: 8px; overflow: hidden; }
+  th, td { padding: 12px 16px; text-align: left; border-bottom: 1px solid #30363d; }
+  th { background: #1f6feb; color: #fff; }
+  tr:hover td { background: #21262d; }
+  ul { padding-left: 22px; }
+  li { margin: 8px 0; }
+  button {
+    background: #2f81f7;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+  }
+  button:hover { background: #1f6feb; }
+  #quiz-result { margin-top: 12px; font-weight: bold; color: #3fb950; }
+  footer {
+    background: #161b22;
+    text-align: center;
+    padding: 24px;
+    color: #8b949e;
+    border-top: 1px solid #30363d;
+    margin-top: 40px;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>🖥️ ПК Гид</h1>
+  <p>Всё, что нужно знать о персональных компьютерах: от сборки до выбора комплектующих</p>
+</header>
+
+<nav>
+  <a href="#components">Комплектующие</a>
+  <a href="#builds">Готовые сборки</a>
+  <a href="#tips">Советы</a>
+  <a href="#quiz">Тест</a>
+</nav>
+
+<section id="components">
+  <h2>Основные комплектующие</h2>
+  <div class="cards">
+    <div class="card">
+      <h3>Процессор (CPU)</h3>
+      <p>«Мозг» компьютера. Отвечает за вычисления. Популярные производители — Intel (Core i5/i7/i9) и AMD (Ryzen 5/7/9). Чем больше ядер и выше частота, тем быстрее работа.</p>
+    </div>
+    <div class="card">
+      <h3>Видеокарта (GPU)</h3>
+      <p>Отвечает за графику и рендеринг. Ключевые модели — NVIDIA GeForce RTX и AMD Radeon RX. Для игр важна не меньше процессора.</p>
+    </div>
+    <div class="card">
+      <h3>Оперативная память</h3>
+      <p>Быстрое хранилище для данных в реальном времени. Для современных задач: 16 ГБ — минимум, 32 ГБ — с запасом. Частота — от 3200 МГц.</p>
+    </div>
+    <div class="card">
+      <h3>SSD-накопитель</h3>
+      <p>Хранит систему и файлы. NVMe SSD в разы быстрее устаревших HDD. Рекомендуемый объём — от 1 ТБ, если система одна, хватит и 512 ГБ.</p>
+    </div>
+  </div>
+</section>
+
+<section id="builds">
+  <h2>Готовые сборки под задачи</h2>
+  <table>
+    <tr><th>Задача</th><th>CPU</th><th>GPU</th><th>ОЗУ</th><th>Ориентир по бюджету</th></tr>
+    <tr><td>Учёба, офис, интернет</td><td>Intel i3 / Ryzen 3</td><td>встроенная графика</td><td>16 ГБ</td><td>30–45 тыс. ₽</td></tr>
+    <tr><td>Игры в 1080p</td><td>Ryzen 5 / i5</td><td>RTX 4060 / RX 7600</td><td>16 ГБ</td><td>70–90 тыс. ₽</td></tr>
+    <tr><td>Игры в 1440p/4K</td><td>Ryzen 7 / i7</td><td>RTX 4070–4080</td><td>32 ГБ</td><td>120–200 тыс. ₽</td></tr>
+    <tr><td>Монтаж, 3D, ИИ</td><td>Ryzen 9 / i9</td><td>RTX 4080/4090</td><td>64 ГБ</td><td>от 250 тыс. ₽</td></tr>
+  </table>
+</section>
+
+<section id="tips">
+  <h2>Советы при сборке</h2>
+  <ul>
+    <li><b>Блок питания</b> — не экономьте: берите с запасом по мощности 20–30% и сертификатом 80+ Bronze и выше.</li>
+    <li><b>Совместимость</b> — проверьте сокет процессора и чипсет материнской платы, а также тип памяти (DDR4/DDR5).</li>
+    <li><b>Охлаждение</b> — для мощных процессоров нужен кулер с TDP не ниже рекомендованного производителем.</li>
+    <li><b>Корпус</b> — важен airflow: пара вентиляторов на вдув спереди и один на выдув сзади.</li>
+    <li><b>Не смешивайте</b> — планки памяти лучше одинаковые: одинаковый объём, частота и производитель.</li>
+  </ul>
+</section>
+
+<section id="quiz">
+  <h2>Мини-тест: знаете ли вы ПК?</h2>
+  <p>Что отвечает за графику в играх?</p>
+  <button onclick="check('a')">Процессор</button>
+  <button onclick="check('b')">Видеокарта</button>
+  <button onclick="check('c')">Жёсткий диск</button>
+  <p id="quiz-result"></p>
+</section>
+
+<footer>
+  <p>ПК Гид © 2026 · Учебный проект</p>
+</footer>
+
+<script>
+function check(answer) {
+  const result = document.getElementById('quiz-result');
+  result.textContent = answer === 'b'
+    ? '✅ Верно! Видеокарта отвечает за обработку графики.'
+    : '❌ Не совсем. Правильный ответ — видеокарта.';
+}
+</script>
+
+</body>
+</html>
