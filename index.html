@@ -3,161 +3,516 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ПК Гид — всё про компьютеры</title>
+<title>ПК Гид 3.0 — мега-гид по сборке компьютера</title>
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
   body {
     font-family: 'Segoe UI', Arial, sans-serif;
-    background: #0d1117;
+    background: linear-gradient(160deg, #0d1117 0%, #161b3a 50%, #0d1117 100%);
     color: #e6edf3;
-    line-height: 1.6;
+    line-height: 1.7;
+    min-height: 100vh;
   }
   header {
-    background: linear-gradient(135deg, #1a2a4a, #0d1117);
-    padding: 60px 20px;
+    background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d);
+    background-size: 300% 300%;
+    animation: gradientMove 8s ease infinite;
+    padding: 80px 20px;
     text-align: center;
-    border-bottom: 2px solid #2f81f7;
   }
-  header h1 { font-size: 2.5rem; color: #58a6ff; }
-  header p { color: #8b949e; max-width: 600px; margin: 12px auto 0; }
+  @keyframes gradientMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+  header h1 {
+    font-size: 46px;
+    margin-bottom: 12px;
+    background: linear-gradient(90deg, #fff, #7ee787, #58a6ff, #f85149, #fff);
+    background-size: 300% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: shine 4s linear infinite;
+  }
+  @keyframes shine { to { background-position: 300% center; } }
+  header p { color: #fff; font-size: 19px; text-shadow: 0 2px 8px rgba(0,0,0,0.5); }
+  .badge {
+    display: inline-block;
+    background: rgba(0,0,0,0.35);
+    color: #7ee787;
+    border: 1px solid #7ee787;
+    padding: 6px 16px;
+    border-radius: 999px;
+    margin-top: 16px;
+    font-size: 14px;
+    animation: pulse 2s ease infinite;
+  }
+  @keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.06); }
+  }
   nav {
     background: #161b22;
     display: flex;
-    justify-content: center;
     flex-wrap: wrap;
-    gap: 8px;
-    padding: 12px;
+    justify-content: center;
+    gap: 5px;
+    padding: 12px 8px;
     position: sticky;
     top: 0;
     z-index: 10;
+    border-bottom: 2px solid #2f81f7;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.5);
   }
   nav a {
     color: #e6edf3;
     text-decoration: none;
-    padding: 8px 16px;
+    padding: 8px 13px;
     border-radius: 8px;
-    transition: background .2s;
+    font-size: 14px;
+    transition: all 0.3s;
   }
-  nav a:hover { background: #2f81f7; color: #fff; }
-  section { max-width: 900px; margin: 0 auto; padding: 50px 20px; }
-  h2 { color: #58a6ff; font-size: 1.8rem; margin-bottom: 20px; border-left: 4px solid #2f81f7; padding-left: 12px; }
-  .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; }
-  .card {
+  nav a:hover { background: linear-gradient(135deg, #2f81f7, #a371f7); color: #fff; transform: translateY(-2px); }
+  main { max-width: 850px; margin: 0 auto; padding: 24px 14px; }
+  section {
     background: #161b22;
     border: 1px solid #30363d;
-    border-radius: 12px;
-    padding: 20px;
-    transition: transform .2s, border-color .2s;
+    border-radius: 16px;
+    padding: 28px 20px;
+    margin-bottom: 28px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.4);
   }
-  .card:hover { transform: translateY(-4px); border-color: #2f81f7; }
-  .card h3 { color: #79c0ff; margin-bottom: 8px; }
-  .card .price { color: #3fb950; font-weight: bold; }
-  table { width: 100%; border-collapse: collapse; margin-top: 16px; background: #161b22; border-radius: 8px; overflow: hidden; }
-  th, td { padding: 12px 16px; text-align: left; border-bottom: 1px solid #30363d; }
-  th { background: #1f6feb; color: #fff; }
-  tr:hover td { background: #21262d; }
-  ul { padding-left: 22px; }
-  li { margin: 8px 0; }
+  h2 { margin-bottom: 14px; font-size: 27px; }
+  .c-blue h2 { color: #58a6ff; border-bottom: 2px solid #2f81f7; padding-bottom: 8px; }
+  .c-green h2 { color: #7ee787; border-bottom: 2px solid #3fb950; padding-bottom: 8px; }
+  .c-purple h2 { color: #d2a8ff; border-bottom: 2px solid #a371f7; padding-bottom: 8px; }
+  .c-orange h2 { color: #ffa657; border-bottom: 2px solid #d29922; padding-bottom: 8px; }
+  .c-red h2 { color: #ff7b72; border-bottom: 2px solid #f85149; padding-bottom: 8px; }
+  .c-pink h2 { color: #ff9bce; border-bottom: 2px solid #f778ba; padding-bottom: 8px; }
+  .c-yellow h2 { color: #f2e14c; border-bottom: 2px solid #d29922; padding-bottom: 8px; }
+  .c-cyan h2 { color: #79f2e0; border-bottom: 2px solid #39c5cf; padding-bottom: 8px; }
+  h3 { color: #79c0ff; margin: 16px 0 8px; }
+  p, li { color: #c9d1d9; }
+  ul, ol { padding-left: 24px; margin-top: 8px; }
+  li { margin: 5px 0; }
+  table { width: 100%; border-collapse: collapse; margin-top: 12px; font-size: 14px; }
+  td, th { border: 1px solid #30363d; padding: 9px; text-align: left; }
+  th { background: #21262d; color: #58a6ff; }
+  .cards { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 14px; }
+  .card {
+    background: #0d1117;
+    border: 1px solid #30363d;
+    border-radius: 12px;
+    padding: 14px;
+    transition: all 0.3s;
+  }
+  .card:hover { border-color: #58a6ff; transform: translateY(-3px); box-shadow: 0 6px 18px rgba(47,129,247,0.25); }
+  .card b { color: #58a6ff; display: block; margin-bottom: 4px; }
+  .step {
+    display: flex;
+    gap: 14px;
+    margin: 16px 0;
+    align-items: flex-start;
+  }
+  .num {
+    background: linear-gradient(135deg, #2f81f7, #a371f7);
+    color: #fff;
+    min-width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    flex-shrink: 0;
+    box-shadow: 0 3px 10px rgba(47,129,247,0.4);
+  }
+  .bar { background: #21262d; border-radius: 999px; height: 18px; margin: 8px 0; overflow: hidden; }
+  .fill {
+    height: 100%;
+    border-radius: 999px;
+    background: linear-gradient(90deg, #3fb950, #7ee787);
+    text-align: right;
+    font-size: 12px;
+    color: #0d1117;
+    font-weight: bold;
+    padding-right: 8px;
+    line-height: 18px;
+  }
+  .f2 { background: linear-gradient(90deg, #2f81f7, #58a6ff); }
+  .f3 { background: linear-gradient(90deg, #d29922, #ffa657); }
+  .f4 { background: linear-gradient(90deg, #a371f7, #d2a8ff); }
+  .f5 { background: linear-gradient(90deg, #f85149, #ff7b72); }
+  .calc, .quiz {
+    background: #0d1117;
+    border: 1px solid #30363d;
+    border-radius: 12px;
+    padding: 18px;
+    margin-top: 12px;
+  }
+  select, input[type=number] {
+    width: 100%;
+    padding: 10px;
+    margin: 6px 0 14px;
+    background: #161b22;
+    color: #e6edf3;
+    border: 1px solid #30363d;
+    border-radius: 8px;
+    font-size: 15px;
+  }
   button {
-    background: #2f81f7;
+    background: linear-gradient(135deg, #238636, #3fb950);
     color: #fff;
     border: none;
-    padding: 10px 20px;
-    border-radius: 8px;
+    padding: 13px 24px;
+    border-radius: 10px;
+    font-size: 16px;
     cursor: pointer;
-    font-size: 1rem;
+    transition: all 0.3s;
+    box-shadow: 0 4px 14px rgba(35,134,54,0.4);
   }
-  button:hover { background: #1f6feb; }
-  #quiz-result { margin-top: 12px; font-weight: bold; color: #3fb950; }
+  button:hover { transform: translateY(-2px) scale(1.03); box-shadow: 0 6px 20px rgba(35,134,54,0.6); }
+  .result { margin-top: 14px; font-size: 22px; color: #7ee787; font-weight: bold; }
+  .qa { border-bottom: 1px solid #30363d; padding: 13px 0; }
+  .q { color: #58a6ff; cursor: pointer; font-weight: bold; }
+  .q:hover { color: #d2a8ff; }
+  .a { display: none; margin-top: 8px; color: #c9d1d9; }
+  .ansbtn {
+    display: block;
+    width: 100%;
+    text-align: left;
+    margin: 8px 0;
+    background: #21262d;
+    padding: 11px 15px;
+    font-size: 15px;
+    box-shadow: none;
+  }
+  .ansbtn:hover { background: #30363d; transform: none; }
+  .ok { color: #7ee787; }
+  .bad { color: #f85149; }
+  .tipbox {
+    border-left: 4px solid #7ee787;
+    background: #12261a;
+    border-radius: 0 10px 10px 0;
+    padding: 12px 14px;
+    margin: 12px 0;
+  }
+  .warnbox {
+    border-left: 4px solid #f85149;
+    background: #2a1214;
+    border-radius: 0 10px 10px 0;
+    padding: 12px 14px;
+    margin: 12px 0;
+  }
+  .funbox {
+    border-left: 4px solid #a371f7;
+    background: #1d1630;
+    border-radius: 0 10px 10px 0;
+    padding: 12px 14px;
+    margin: 12px 0;
+  }
+  .timerbox { text-align: center; margin-top: 10px; }
+  #timer {
+    font-size: 44px;
+    font-weight: bold;
+    color: #ffa657;
+    text-shadow: 0 0 20px rgba(255,166,87,0.5);
+  }
   footer {
-    background: #161b22;
     text-align: center;
-    padding: 24px;
     color: #8b949e;
+    padding: 34px 16px;
     border-top: 1px solid #30363d;
-    margin-top: 40px;
+    font-size: 14px;
+    background: #0d1117;
+  }
+  @media (max-width: 500px) {
+    .cards { grid-template-columns: 1fr; }
+    header h1 { font-size: 32px; }
   }
 </style>
 </head>
 <body>
 
 <header>
-  <h1>🖥️ ПК Гид</h1>
-  <p>Всё, что нужно знать о персональных компьютерах: от сборки до выбора комплектующих</p>
+  <h1>🖥️ ПК Гид 3.0</h1>
+  <p>Мега-гид по сборке компьютера: от первой детали до готовой машины</p>
+  <span class="badge">🚀 Обновлено: калькулятор, тест, таймер и ещё 6 новых разделов!</span>
 </header>
 
 <nav>
-  <a href="#components">Комплектующие</a>
-  <a href="#builds">Готовые сборки</a>
-  <a href="#tips">Советы</a>
+  <a href="#parts">Комплектующие</a>
+  <a href="#steps">Сборка</a>
+  <a href="#calc">Калькулятор</a>
+  <a href="#monitor">Монитор</a>
+  <a href="#periph">Периферия</a>
   <a href="#quiz">Тест</a>
+  <a href="#tips">Советы</a>
+  <a href="#problems">Ошибки</a>
+  <a href="#timer">Таймер</a>
+  <a href="#faq">Вопросы</a>
+  <a href="#gloss">Словарь</a>
 </nav>
 
-<section id="components">
-  <h2>Основные комплектующие</h2>
+<main>
+
+<section class="c-blue" id="parts">
+  <h2>🧩 Из чего состоит компьютер</h2>
+  <p>Каждая деталь отвечает за свою работу. Вот главные из них — карточки оживают при наведении:</p>
   <div class="cards">
-    <div class="card">
-      <h3>Процессор (CPU)</h3>
-      <p>«Мозг» компьютера. Отвечает за вычисления. Популярные производители — Intel (Core i5/i7/i9) и AMD (Ryzen 5/7/9). Чем больше ядер и выше частота, тем быстрее работа.</p>
-    </div>
-    <div class="card">
-      <h3>Видеокарта (GPU)</h3>
-      <p>Отвечает за графику и рендеринг. Ключевые модели — NVIDIA GeForce RTX и AMD Radeon RX. Для игр важна не меньше процессора.</p>
-    </div>
-    <div class="card">
-      <h3>Оперативная память</h3>
-      <p>Быстрое хранилище для данных в реальном времени. Для современных задач: 16 ГБ — минимум, 32 ГБ — с запасом. Частота — от 3200 МГц.</p>
-    </div>
-    <div class="card">
-      <h3>SSD-накопитель</h3>
-      <p>Хранит систему и файлы. NVMe SSD в разы быстрее устаревших HDD. Рекомендуемый объём — от 1 ТБ, если система одна, хватит и 512 ГБ.</p>
-    </div>
+    <div class="card"><b>🧠 Процессор (CPU)</b>Мозг компьютера. От него зависит скорость в играх и программах. Чем больше ядер и частота — тем быстрее.</div>
+    <div class="card"><b>🎮 Видеокарта (GPU)</b>Рисует картинку. Для игр — самая дорогая и важная покупка.</div>
+    <div class="card"><b>⚡ Оперативная память</b>Быстрая память для программ. Минимум 16 ГБ для игр и работы.</div>
+    <div class="card"><b>💾 SSD-накопитель</b>Хранит систему и файлы. SSD быстрее жёсткого диска в разы.</div>
+    <div class="card"><b>🔌 Материнская плата</b>Соединяет всё. Важно, чтобы её сокет подходил к процессору.</div>
+    <div class="card"><b>🔋 Блок питания</b>Кормит энергией. На нём нельзя экономить — иначе рискуете спалить всё.</div>
+    <div class="card"><b>📦 Корпус</b>Дом для деталей. Смотрите на вентиляцию и размер (форм-фактор).</div>
+    <div class="card"><b>❄️ Кулер</b>Охлаждает процессор. Без него компьютер перегреется и выключится.</div>
   </div>
 </section>
 
-<section id="builds">
-  <h2>Готовые сборки под задачи</h2>
+<section class="c-green" id="steps">
+  <h2>🔧 Как собрать компьютер: 7 шагов</h2>
+  <div class="step"><div class="num">1</div><div><b>Подготовка.</b> Стелите картон, найдите отвёртку крестовую. Работайте не на ковре — статика опасна для деталей.</div></div>
+  <div class="step"><div class="num">2</div><div><b>Процессор.</b> Откройте сокет материнской платы, аккуратно вставьте CPU (совместите треугольнички), зафиксируйте.</div></div>
+  <div class="step"><div class="num">3</div><div><b>Память и SSD.</b> Откройте защёлки слотов RAM и вставьте планки до щелчка. M.2 SSD прикрутите к плате.</div></div>
+  <div class="step"><div class="num">4</div><div><b>Плата в корпус.</b> Установите материнскую плату на стойки и прикрутите. Подключите переднюю панель по инструкции корпуса.</div></div>
+  <div class="step"><div class="num">5</div><div><b>Блок питания.</b> Закрепите его, подключите 24-контактный разъём к плате и 8-контактный к процессору.</div></div>
+  <div class="step"><div class="num">6</div><div><b>Видеокарта.</b> Вставьте её в самый верхний слот PCIe до щелчка и подключите питание, если оно нужно.</div></div>
+  <div class="step"><div class="num">7</div><div><b>Первый запуск.</b> Подключите монитор и кнопку питания. Если вентиляторы крутятся, а экран загорается — победа! Ставьте Windows.</div></div>
+  <div class="tipbox">💡 <b>Совет:</b> собирайте на большом столе при хорошем свете и держите инструкцию от материнской платы рядом — она ответит на 90% вопросов.</div>
+</section>
+
+<section class="c-blue" id="calc">
+  <h2>💰 Калькулятор бюджета</h2>
+  <p>Выберите детали — и узнайте примерную стоимость сборки в рублях:</p>
+  <div class="calc">
+    <label>Процессор:</label>
+    <select id="cpu">
+      <option value="7000">Бюджетный (4 ядра) — 7 000 ₽</option>
+      <option value="18000">Средний (6 ядер) — 18 000 ₽</option>
+      <option value="35000">Мощный (8+ ядер) — 35 000 ₽</option>
+    </select>
+    <label>Видеокарта:</label>
+    <select id="gpu">
+      <option value="0">Встроенная графика — 0 ₽</option>
+      <option value="25000">Для игр 1080p — 25 000 ₽</option>
+      <option value="55000">Для игр 1440p — 55 000 ₽</option>
+      <option value="90000">Флагман 4K — 90 000 ₽</option>
+    </select>
+    <label>Оперативная память:</label>
+    <select id="ram">
+      <option value="2000">8 ГБ — 2 000 ₽</option>
+      <option value="3000">16 ГБ — 3 000 ₽</option>
+      <option value="6000">32 ГБ — 6 000 ₽</option>
+    </select>
+    <label>SSD:</label>
+    <select id="ssd">
+      <option value="4000">512 ГБ — 4 000 ₽</option>
+      <option value="7500">1 ТБ — 7 500 ₽</option>
+      <option value="13000">2 ТБ — 13 000 ₽</option>
+    </select>
+    <label>Блок питания:</label>
+    <select id="psu">
+      <option value="4000">550 Вт — 4 000 ₽</option>
+      <option value="7000">750 Вт — 7 000 ₽</option>
+      <option value="11000">850 Вт — 11 000 ₽</option>
+    </select>
+    <label>Корпус:</label>
+    <select id="case">
+      <option value="3500">Простой — 3 500 ₽</option>
+      <option value="8000">С вентиляцией и стеклом — 8 000 ₽</option>
+    </select>
+    <label>Материнская плата:</label>
+    <select id="mb">
+      <option value="8000">Базовая — 8 000 ₽</option>
+      <option value="15000">Продвинутая — 15 000 ₽</option>
+    </select>
+    <button onclick="calcTotal()">Посчитать 💰</button>
+    <div class="result" id="total"></div>
+  </div>
+</section>
+
+<section class="c-pink" id="monitor">
+  <h2>🖥️ Как выбрать монитор</h2>
+  <p>Монитор — это то, что вы видите каждый день, поэтому экономить на нём тоже не стоит.</p>
   <table>
-    <tr><th>Задача</th><th>CPU</th><th>GPU</th><th>ОЗУ</th><th>Ориентир по бюджету</th></tr>
-    <tr><td>Учёба, офис, интернет</td><td>Intel i3 / Ryzen 3</td><td>встроенная графика</td><td>16 ГБ</td><td>30–45 тыс. ₽</td></tr>
-    <tr><td>Игры в 1080p</td><td>Ryzen 5 / i5</td><td>RTX 4060 / RX 7600</td><td>16 ГБ</td><td>70–90 тыс. ₽</td></tr>
-    <tr><td>Игры в 1440p/4K</td><td>Ryzen 7 / i7</td><td>RTX 4070–4080</td><td>32 ГБ</td><td>120–200 тыс. ₽</td></tr>
-    <tr><td>Монтаж, 3D, ИИ</td><td>Ryzen 9 / i9</td><td>RTX 4080/4090</td><td>64 ГБ</td><td>от 250 тыс. ₽</td></tr>
+    <tr><th>Параметр</th><th>Что выбрать</th></tr>
+    <tr><td>Диагональ</td><td>24–27 дюймов — золотая середина для игр и работы</td></tr>
+    <tr><td>Разрешение</td><td>1920×1080 (Full HD) — стандарт; 2560×1440 — если видеокарта мощная</td></tr>
+    <tr><td>Частота обновления</td><td>144 Гц для игр — картинка плавная; 60–75 Гц хватит для учёбы и офиса</td></tr>
+    <tr><td>Матрица</td><td>IPS — яркие цвета и широкие углы обзора; VA — глубокий чёрный</td></tr>
+    <tr><td>Изогнутость</td><td>Дело вкуса: изогнутые удобны для широких мониторов от 27 дюймов</td></tr>
+  </table>
+  <div class="tipbox">💡 Для консолей и стримов важно, чтобы у монитора были современные разъёмы HDMI 2.1 и DisplayPort.</div>
+</section>
+
+<section class="c-purple" id="periph">
+  <h2>⌨️ Периферия: клавиатура, мышь и прочее</h2>
+  <div class="cards">
+    <div class="card"><b>⌨️ Клавиатура</b>Механическая — приятная и живучая, мембранная — тише и дешевле. Для игр берите механику с быстрыми переключателями.</div>
+    <div class="card"><b>🖱️ Мышь</b>Смотрите на вес, число кнопок и датчик. Для шутеров — лёгкая и с высокой чувствительностью.</div>
+    <div class="card"><b>🎧 Наушники</b>С микрофоном — для игр и звонков. Проверьте, как сидят на голове: носить по несколько часов!</div>
+    <div class="card"><b>🎙️ Микрофон</b>Гарнитурный хватит для старта. Отдельный микрофон на стойке даёт куда более чистый звук.</div>
+  </div>
+</section>
+
+<section class="c-orange" id="quiz">
+  <h2>🎯 Проверь себя</h2>
+  <p>Мини-тест из шести вопросов. Нажимайте на варианты!</p>
+  <div class="quiz">
+    <h3>1. Что делает процессор?</h3>
+    <button class="ansbtn" onclick="check(1,this,false)">Рисует картинку в играх</button>
+    <button class="ansbtn" onclick="check(1,this,true)">Выполняет вычисления — это «мозг»</button>
+    <button class="ansbtn" onclick="check(1,this,false)">Хранит файлы</button>
+    <p id="r1"></p>
+    <h3>2. Где нельзя экономить?</h3>
+    <button class="ansbtn" onclick="check(2,this,true)">Блок питания</button>
+    <button class="ansbtn" onclick="check(2,this,false)">Корпус</button>
+    <button class="ansbtn" onclick="check(2,this,false)">Кулер</button>
+    <p id="r2"></p>
+    <h3>3. Куда ставить Windows, чтобы всё летало?</h3>
+    <button class="ansbtn" onclick="check(3,this,false)">На старый жёсткий диск</button>
+    <button class="ansbtn" onclick="check(3,this,true)">На SSD</button>
+    <button class="ansbtn" onclick="check(3,this,false)">На флешку</button>
+    <p id="r3"></p>
+    <h3>4. Что должно совпадать у процессора и материнской платы?</h3>
+    <button class="ansbtn" onclick="check(4,this,false)">Цвет</button>
+    <button class="ansbtn" onclick="check(4,this,false)">Фирма корпуса</button>
+    <button class="ansbtn" onclick="check(4,this,true)">Сокет</button>
+    <p id="r4"></p>
+    <h3>5. Сколько памяти хватит для современных игр?</h3>
+    <button class="ansbtn" onclick="check(5,this,false)">4 ГБ</button>
+    <button class="ansbtn" onclick="check(5,this,true)">16 ГБ</button>
+    <button class="ansbtn" onclick="check(5,this,false)">256 МБ</button>
+    <p id="r5"></p>
+    <h3>6. Что делать, если компьютер включается, но экран чёрный?</h3>
+    <button class="ansbtn" onclick="check(6,this,false)">Выкинуть всё и купить ноутбук</button>
+    <button class="ansbtn" onclick="check(6,this,true)">Проверить кабель монитора и видеокарту</button>
+    <button class="ansbtn" onclick="check(6,this,false)">Кричать на компьютер</button>
+    <p id="r6"></p>
+  </div>
+</section>
+
+<section class="c-yellow" id="tips">
+  <h2>⭐ 10 советов от бывалых</h2>
+  <ol>
+    <li><b>Планируйте бюджет заранее</b> — решите, для чего ПК: игры, работа, учёба или всё сразу.</li>
+    <li><b>Видеокарта — главная статья расходов</b> в игровом ПК. На неё уходит до половины бюджета.</li>
+    <li><b>Проверяйте совместимость</b> сокета, памяти и блока питания перед покупкой.</li>
+    <li><b>Не покупайте самый дешёвый блок питания</b> — это самая частая причина поломок.</li>
+    <li><b>Кабель-менеджмент</b> — прячьте провода, воздух лучше ходит и вид аккуратнее.</li>
+    <li><b>Сразу ставьте SSD</b> — система загружается за секунды вместо минут.</li>
+    <li><b>Делайте резервные копии</b> важных файлов — желательно в облако.</li>
+    <li><b>Обновляйте драйверы видеокарты</b> — игры ускоряются заметно.</li>
+    <li><b>Протирайте пыль</b> раз в пару месяцев — сжатым воздухом, выключив ПК.</li>
+    <li><b>Не бойтесь собирать самому</b> — детали сложно сломать, если не давить и не гнуть.</li>
+  </ol>
+</section>
+
+<section class="c-red" id="problems">
+  <h2>🚨 Типичные ошибки новичков</h2>
+  <div class="warnbox">⚠️ <b>Забыли снять защитную плёнку</b> с подошвы кулера — процессор перегреется в первый же день.</div>
+  <div class="warnbox">⚠️ <b>Недостаток мощности блока питания</b> — компьютер выключается под нагрузкой в играх.</div>
+  <div class="warnbox">⚠️ <b>Память не в тех слотах</b> — если планок две, ставьте их в 2-й и 4-й слоты (смотрите инструкцию платы).</div>
+  <div class="warnbox">⚠️ <b>Забыли подключить питание видеокарты</b> — экран останется чёрным.</div>
+  <div class="warnbox">⚠️ <b>Кулер вплотную к стене корпуса</b> — горячему воздуху некуда деваться.</div>
+  <div class="funbox">😄 <b>Бонус:</b> даже опытные сборщики иногда забывают кнопку питания в разъёме передней панели. Не волнуйтесь, если у вас не включилось сразу!</div>
+</section>
+
+<section class="c-green" id="timer">
+  <h2>⏱️ Таймер сборки</h2>
+  <p>Средняя первая сборка занимает 2–4 часа. Нажмите «Старт» — и проверьте, сколько времени займёт у вас!</p>
+  <div class="timerbox">
+    <div id="timer">00:00</div>
+    <button onclick="startTimer()">▶ Старт</button>
+    <button onclick="stopTimer()">⏸ Пауза</button>
+    <button onclick="resetTimer()">🔄 Сброс</button>
+  </div>
+</section>
+
+<section class="c-cyan" id="faq">
+  <h2>❓ Частые вопросы</h2>
+  <div class="qa"><p class="q" onclick="toggle(this)">Сколько стоит игровой ПК?</p><p class="a">Разумный минимум для современных игр — примерно 60–80 тысяч рублей. Хороший вариант на 2K — 100–150 тысяч.</p></div>
+  <div class="qa"><p class="q" onclick="toggle(this)">Собрать самому или купить готовый?</p><p class="a">Самостоятельная сборка дешевле на 10–20% и вы точно знаете, что внутри. Готовый проще — но часто с дорогой видеокартой и дешёвым блоком питания.</p></div>
+  <div class="qa"><p class="q" onclick="toggle(this)">Что обновить в старом ПК первым делом?</p><p class="a">SSD и память. Даже старый компьютер с SSD оживает как новый — это самый дешёвый апгрейд с максимальным эффектом.</p></div>
+  <div class="qa"><p class="q" onclick="toggle(this)">Нужна ли водяная система охлаждения?</p><p class="a">Новичку — нет. Хороший башенный кулер за 2–3 тысячи рублей справляется с большинством процессоров и не потечёт.</p></div>
+  <div class="qa"><p class="q" onclick="toggle(this)">Что такое сокет?</p><p class="a">Это разъём на материнской плате, куда вставляется процессор. Сокеты процессора и платы должны совпадать — проверяйте перед покупкой.</p></div>
+  <div class="qa"><p class="q" onclick="toggle(this)">Можно ли собрать ПК без видеокарты?</p><p class="a">Да, если у процессора есть встроенная графика — для офиса, учёбы и нетребовательных игр этого достаточно.</p></div>
+  <div class="qa"><p class="q" onclick="toggle(this)">Windows платный?</p><p class="a">Есть бесплатная версия без персонализации — она работает полноценно. А ещё существует Linux, который полностью бесплатен.</p></div>
+</section>
+
+<section class="c-blue" id="gloss">
+  <h2>📖 Мини-словарь</h2>
+  <table>
+    <tr><th>Термин</th><th>Что значит</th></tr>
+    <tr><td>CPU</td><td>Процессор</td></tr>
+    <tr><td>GPU</td><td>Видеокарта</td></tr>
+    <tr><td>RAM</td><td>Оперативная память</td></tr>
+    <tr><td>SSD</td><td>Быстрый накопитель</td></tr>
+    <tr><td>Socket</td><td>Разъём процессора на плате</td></tr>
+    <tr><td>PCIe</td><td>Слот для видеокарты и других плат</td></tr>
+    <tr><td>PSU</td><td>Блок питания</td></tr>
+    <tr><td>M.2</td><td>Формат маленького SSD, вставляется прямо в плату</td></tr>
+    <tr><td>BIOS / UEFI</td><td>Настройки железа до загрузки Windows</td></tr>
+    <tr><td>FPS</td><td>Кадров в секунду — плавность картинки в играх</td></tr>
+    <tr><td>Частота Гц</td><td>Сколько раз в секунду монитор обновляет картинку</td></tr>
+    <tr><td>Троттлинг</td><td>Автоснижение скорости процессора от перегрева</td></tr>
   </table>
 </section>
 
-<section id="tips">
-  <h2>Советы при сборке</h2>
-  <ul>
-    <li><b>Блок питания</b> — не экономьте: берите с запасом по мощности 20–30% и сертификатом 80+ Bronze и выше.</li>
-    <li><b>Совместимость</b> — проверьте сокет процессора и чипсет материнской платы, а также тип памяти (DDR4/DDR5).</li>
-    <li><b>Охлаждение</b> — для мощных процессоров нужен кулер с TDP не ниже рекомендованного производителем.</li>
-    <li><b>Корпус</b> — важен airflow: пара вентиляторов на вдув спереди и один на выдув сзади.</li>
-    <li><b>Не смешивайте</b> — планки памяти лучше одинаковые: одинаковый объём, частота и производитель.</li>
-  </ul>
+<section class="c-pink" id="roadmap">
+  <h2>🗺️ План развития: что дальше</h2>
+  <p>Собрали ПК — а дальше? Вот план развития вашего железа:</p>
+  <div class="bar"><div class="fill f1" style="width:20%">1. Базовая сборка</div></div>
+  <div class="bar"><div class="fill f2" style="width:40%">2. Больше памяти и SSD</div></div>
+  <div class="bar"><div class="fill f3" style="width:60%">3. Апгрейд видеокарты</div></div>
+  <div class="bar"><div class="fill f4" style="width:80%">4. Мощный процессор и охлаждение</div></div>
+  <div class="bar"><div class="fill f5" style="width:100%">5. Полный апгрейд и мечта 🚀</div></div>
 </section>
 
-<section id="quiz">
-  <h2>Мини-тест: знаете ли вы ПК?</h2>
-  <p>Что отвечает за графику в играх?</p>
-  <button onclick="check('a')">Процессор</button>
-  <button onclick="check('b')">Видеокарта</button>
-  <button onclick="check('c')">Жёсткий диск</button>
-  <p id="quiz-result"></p>
-</section>
+</main>
 
-<footer>
-  <p>ПК Гид © 2026 · Учебный проект</p>
-</footer>
+<footer>ПК Гид 3.0 © 2026 · Собрано с любовью к железу 🖤<br>Удачной сборки! 🚀</footer>
 
 <script>
-function check(answer) {
-  const result = document.getElementById('quiz-result');
-  result.textContent = answer === 'b'
-    ? '✅ Верно! Видеокарта отвечает за обработку графики.'
-    : '❌ Не совсем. Правильный ответ — видеокарта.';
+function calcTotal() {
+  var ids = ['cpu','gpu','ram','ssd','psu','case','mb'];
+  var sum = 0;
+  ids.forEach(function(id){ sum += Number(document.getElementById(id).value); });
+  document.getElementById('total').textContent = 'Итого: примерно ' + sum.toLocaleString('ru-RU') + ' ₽';
 }
+function toggle(el) {
+  var a = el.nextElementSibling;
+  a.style.display = (a.style.display === 'block') ? 'none' : 'block';
+}
+function check(n, btn, right) {
+  var r = document.getElementById('r' + n);
+  if (right) {
+    r.textContent = '✅ Верно!';
+    r.className = 'ok';
+  } else {
+    r.textContent = '❌ Не совсем. Попробуйте другой вариант!';
+    r.className = 'bad';
+  }
+}
+var seconds = 0, timerOn = false, timerInt = null;
+function showTimer() {
+  var m = Math.floor(seconds / 60), s = seconds % 60;
+  document.getElementById('timer').textContent =
+    (m < 10 ? '0' : '') + m + ':' + (s < 10 ? '0' : '') + s;
+}
+function startTimer() {
+  if (timerOn) return;
+  timerOn = true;
+  timerInt = setInterval(function(){ seconds++; showTimer(); }, 1000);
+}
+function stopTimer() { timerOn = false; clearInterval(timerInt); }
+function resetTimer() { stopTimer(); seconds = 0; showTimer(); }
 </script>
 
 </body>
 </html>
+
