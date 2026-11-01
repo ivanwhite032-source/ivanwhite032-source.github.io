@@ -3,14 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Данил Карасев — пловец и геймер</title>
+<title>ПК Гид 4.0 Pro — супер крутой гид по компьютеру</title>
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
   html { scroll-behavior: smooth; }
   body {
     font-family: 'Segoe UI', Arial, sans-serif;
-    background: #07090f;
-    color: #e6edf3;
+    background: #060a12;
+    color: #dfe7f3;
     line-height: 1.7;
     overflow-x: hidden;
   }
@@ -19,20 +19,17 @@
     inset: 0;
     z-index: 0;
     background:
-      radial-gradient(1000px 500px at 20% 0%, rgba(0,150,255,0.18), transparent),
-      radial-gradient(900px 500px at 85% 25%, rgba(120,60,255,0.14), transparent),
-      radial-gradient(800px 500px at 50% 100%, rgba(255,120,30,0.10), transparent),
-      radial-gradient(2px 2px at 30% 20%, rgba(255,255,255,0.6), transparent),
-      radial-gradient(2px 2px at 70% 15%, rgba(255,255,255,0.5), transparent),
-      radial-gradient(2px 2px at 85% 70%, rgba(255,255,255,0.4), transparent),
-      radial-gradient(2px 2px at 15% 75%, rgba(255,255,255,0.4), transparent);
-    animation: shimmer 7s ease-in-out infinite alternate;
+      radial-gradient(900px 500px at 10% 0%, rgba(0,120,255,0.18), transparent),
+      radial-gradient(800px 500px at 90% 20%, rgba(0,255,180,0.12), transparent),
+      radial-gradient(800px 500px at 50% 100%, rgba(120,0,255,0.14), transparent),
+      radial-gradient(2px 2px at 20% 30%, rgba(255,255,255,0.5), transparent),
+      radial-gradient(2px 2px at 80% 10%, rgba(255,255,255,0.4), transparent),
+      radial-gradient(2px 2px at 60% 70%, rgba(255,255,255,0.4), transparent);
   }
-  @keyframes shimmer { from { opacity: 0.7; } to { opacity: 1; } }
   .wrap { position: relative; z-index: 1; }
 
   .hero {
-    min-height: 92vh;
+    min-height: 85vh;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -45,80 +42,69 @@
     content: '';
     position: absolute;
     bottom: 0; left: 0; right: 0;
-    height: 140px;
-    background: linear-gradient(transparent, #07090f);
+    height: 120px;
+    background: linear-gradient(transparent, #060a12);
   }
-  .avatar {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    background: linear-gradient(135deg, #00c6ff, #7b2ff7);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 60px;
+  .logo {
+    width: 140px; height: 140px;
+    border-radius: 32px;
+    background: linear-gradient(135deg, #00c6ff, #7b2dff);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 64px;
     margin-bottom: 22px;
     box-shadow: 0 0 60px rgba(0,150,255,0.5);
     animation: float 5s ease-in-out infinite;
   }
-  @keyframes float {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-14px); }
-  }
+  @keyframes float { 0%,100% { transform: translateY(0);} 50% { transform: translateY(-12px);} }
   .hero h1 {
-    font-size: clamp(36px, 9vw, 70px);
+    font-size: clamp(34px, 8vw, 64px);
     font-weight: 800;
-    margin-bottom: 12px;
-    background: linear-gradient(90deg, #00c6ff, #7ee787, #a371f7, #ffa657, #00c6ff);
+    margin-bottom: 10px;
+    background: linear-gradient(90deg, #00c6ff, #7b2dff, #00ffc6, #00c6ff);
     background-size: 300% auto;
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
-    animation: shine 5s linear infinite;
+    animation: shine 6s linear infinite;
   }
   @keyframes shine { to { background-position: 300% center; } }
-  .hero p { color: #9fb0c3; font-size: 18px; max-width: 560px; margin-bottom: 30px; }
+  .hero p { color: #9fb0c9; max-width: 600px; margin-bottom: 28px; font-size: 18px; }
+  .badge {
+    display: inline-block;
+    padding: 6px 16px;
+    border-radius: 999px;
+    border: 1px solid #2c3b55;
+    background: rgba(0,40,80,0.4);
+    color: #7fd7ff;
+    font-size: 14px;
+    margin-bottom: 18px;
+  }
   .cta { display: flex; gap: 14px; flex-wrap: wrap; justify-content: center; }
   .btn-big {
-    padding: 15px 32px;
-    border-radius: 999px;
-    color: #fff;
-    text-decoration: none;
-    font-weight: bold;
-    background: linear-gradient(135deg, #0072ff, #7b2ff7);
-    box-shadow: 0 8px 30px rgba(90,100,255,0.45);
+    padding: 15px 32px; border-radius: 999px;
+    color: #fff; text-decoration: none; font-weight: bold;
+    background: linear-gradient(135deg, #0091ff, #7b2dff);
+    box-shadow: 0 8px 30px rgba(0,120,255,0.4);
     transition: all 0.3s;
   }
   .btn-big:hover { transform: translateY(-3px) scale(1.05); }
   .btn-ghost {
-    padding: 15px 32px;
-    border-radius: 999px;
-    color: #e6edf3;
-    text-decoration: none;
-    border: 1px solid #30363d;
-    background: rgba(22,27,34,0.7);
+    padding: 15px 32px; border-radius: 999px;
+    color: #dfe7f3; text-decoration: none;
+    border: 1px solid #2c3b55;
+    background: rgba(10,20,35,0.7);
     transition: all 0.3s;
   }
   .btn-ghost:hover { border-color: #00c6ff; color: #00c6ff; }
-  .scroll-hint {
-    position: absolute;
-    bottom: 80px;
-    color: #8b949e;
-    font-size: 14px;
-    animation: bounce 2s infinite;
-  }
-  @keyframes bounce { 0%,100% { transform: translateY(0); } 50% { transform: translateY(8px); } }
 
   nav {
     position: fixed;
-    top: 14px;
-    left: 50%;
+    top: 12px; left: 50%;
     transform: translateX(-50%);
     z-index: 100;
-    display: flex;
-    gap: 4px;
+    display: flex; gap: 4px;
     padding: 8px 12px;
-    background: rgba(22,27,34,0.55);
+    background: rgba(10,20,35,0.65);
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
     border: 1px solid rgba(255,255,255,0.1);
@@ -130,148 +116,132 @@
   }
   nav::-webkit-scrollbar { display: none; }
   nav a {
-    color: #c9d1d9;
-    text-decoration: none;
-    padding: 8px 14px;
-    border-radius: 999px;
-    font-size: 14px;
-    white-space: nowrap;
+    color: #b7c6dd; text-decoration: none;
+    padding: 8px 14px; border-radius: 999px;
+    font-size: 14px; white-space: nowrap;
     transition: all 0.25s;
   }
-  nav a:hover { background: rgba(90,120,255,0.3); color: #fff; }
+  nav a:hover { background: rgba(0,145,255,0.25); color: #fff; }
 
-  main { max-width: 900px; margin: 0 auto; padding: 40px 16px 0; }
+  main { max-width: 950px; margin: 0 auto; padding: 40px 16px 0; }
   section {
-    background: rgba(22,27,34,0.8);
+    background: rgba(12,22,38,0.85);
     border: 1px solid rgba(255,255,255,0.07);
     border-radius: 22px;
     padding: 34px 24px;
     margin-bottom: 34px;
-    opacity: 0;
-    transform: translateY(30px);
+    opacity: 0; transform: translateY(30px);
     transition: opacity 0.7s ease, transform 0.7s ease;
   }
   section.visible { opacity: 1; transform: translateY(0); }
   h2 {
-    font-size: 28px;
-    margin-bottom: 16px;
-    background: linear-gradient(90deg, #00c6ff, #a371f7);
+    font-size: 28px; margin-bottom: 16px;
+    background: linear-gradient(90deg, #00c6ff, #7b2dff);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
     width: fit-content;
   }
-  h3 { color: #79c0ff; margin: 16px 0 8px; }
-  p, li { color: #c9d1d9; }
+  h3 { color: #7fd7ff; margin: 18px 0 8px; }
+  p, li { color: #c8d4e6; }
   ul, ol { padding-left: 24px; margin-top: 8px; }
   li { margin: 6px 0; }
+  code {
+    background: #0d1524;
+    border: 1px solid #24344d;
+    border-radius: 6px;
+    padding: 2px 8px;
+    font-size: 14px;
+    color: #7fe0c0;
+  }
 
-  .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px; margin-top: 16px; }
+  .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 14px; margin-top: 16px; }
   .card {
-    background: rgba(13,17,23,0.9);
-    border: 1px solid #30363d;
+    background: rgba(6,12,24,0.9);
+    border: 1px solid #24344d;
     border-radius: 16px;
     padding: 18px;
     transition: all 0.3s;
   }
   .card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 30px rgba(90,120,255,0.2);
+    box-shadow: 0 10px 30px rgba(0,120,255,0.2);
     outline: 1px solid #00c6ff;
   }
-  .card b { color: #00c6ff; display: block; margin-bottom: 6px; font-size: 16px; }
+  .card b { color: #7fd7ff; display: block; margin-bottom: 6px; font-size: 16px; }
 
-  .fact { display: flex; gap: 16px; margin: 16px 0; align-items: flex-start; }
-  .dot {
-    background: linear-gradient(135deg, #0072ff, #7b2ff7);
-    color: #fff;
-    min-width: 40px;
-    height: 40px;
-    border-radius: 14px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 20px;
-    flex-shrink: 0;
-    box-shadow: 0 4px 14px rgba(90,120,255,0.4);
-  }
-
-  .panel {
-    background: rgba(13,17,23,0.9);
-    border: 1px solid #30363d;
-    border-radius: 16px;
-    padding: 20px;
-    margin-top: 14px;
-  }
-  button {
-    background: linear-gradient(135deg, #0072ff, #7b2ff7);
-    color: #fff;
-    border: none;
-    padding: 14px 26px;
-    border-radius: 12px;
-    font-size: 16px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: all 0.3s;
-    box-shadow: 0 6px 20px rgba(90,120,255,0.35);
-  }
-  button:hover { transform: translateY(-2px) scale(1.04); }
-
-  .ansbtn {
-    display: block;
-    width: 100%;
-    text-align: left;
-    margin: 8px 0;
-    background: #21262d;
-    padding: 13px 16px;
-    font-size: 15px;
-    font-weight: normal;
-    border-radius: 12px;
-    box-shadow: none;
-  }
-  .ansbtn:hover { background: #30363d; transform: none; }
-  .ok { color: #7ee787; }
-  .bad { color: #f85149; }
+  table { width: 100%; border-collapse: collapse; margin-top: 12px; font-size: 14px; }
+  td, th { border: 1px solid #24344d; padding: 10px; text-align: left; }
+  th { background: #10203a; color: #7fd7ff; }
 
   .tipbox {
-    border-left: 4px solid #7ee787;
-    background: rgba(35,134,54,0.12);
+    border-left: 4px solid #00ffc6;
+    background: rgba(0,180,130,0.12);
     border-radius: 0 12px 12px 0;
     padding: 14px 16px;
     margin: 14px 0;
   }
   .warnbox {
-    border-left: 4px solid #f85149;
-    background: rgba(248,81,73,0.12);
+    border-left: 4px solid #ff5e5e;
+    background: rgba(255,80,80,0.12);
     border-radius: 0 12px 12px 0;
     padding: 14px 16px;
     margin: 14px 0;
-  }
-  .quotebox {
-    border-left: 4px solid #a371f7;
-    background: rgba(163,113,247,0.12);
-    border-radius: 0 12px 12px 0;
-    padding: 14px 16px;
-    margin: 14px 0;
-    font-style: italic;
-    color: #d2a8ff;
   }
 
-  .timerbox { text-align: center; margin-top: 12px; }
-  #timer {
-    font-size: 52px;
+  .panel {
+    background: rgba(6,12,24,0.9);
+    border: 1px solid #24344d;
+    border-radius: 16px;
+    padding: 20px;
+    margin-top: 14px;
+  }
+  button {
+    background: linear-gradient(135deg, #0091ff, #7b2dff);
+    color: #fff; border: none;
+    padding: 14px 26px; border-radius: 12px;
+    font-size: 16px; font-weight: bold;
+    cursor: pointer; transition: all 0.3s;
+    box-shadow: 0 6px 20px rgba(0,120,255,0.3);
+  }
+  button:hover { transform: translateY(-2px) scale(1.04); }
+  .ansbtn {
+    display: block; width: 100%; text-align: left;
+    margin: 8px 0; background: #142036;
+    padding: 13px 16px; font-size: 15px;
+    font-weight: normal; border-radius: 12px;
+    box-shadow: none;
+  }
+  .ansbtn:hover { background: #1e3050; transform: none; }
+  .ok { color: #7fe0a0; }
+  .bad { color: #ff8080; }
+  .scorebox { text-align: center; margin-top: 20px; font-size: 24px; font-weight: bold; color: #7fd7ff; }
+
+  .calcbox { display: grid; grid-template-columns: 1fr; gap: 12px; }
+  .calcbox label { color: #9fb0c9; font-size: 14px; }
+  select, input[type=number] {
+    width: 100%;
+    padding: 12px;
+    border-radius: 10px;
+    border: 1px solid #24344d;
+    background: #0d1524;
+    color: #dfe7f3;
+    font-size: 15px;
+  }
+  #calcResult {
+    text-align: center;
+    font-size: 20px;
     font-weight: bold;
-    color: #00c6ff;
-    text-shadow: 0 0 30px rgba(0,198,255,0.5);
-    margin-bottom: 12px;
-    font-variant-numeric: tabular-nums;
+    color: #00ffc6;
+    margin-top: 14px;
+    min-height: 30px;
   }
 
   footer {
     text-align: center;
-    color: #8b949e;
+    color: #8496b0;
     padding: 44px 16px;
-    border-top: 1px solid #30363d;
+    border-top: 1px solid #24344d;
     font-size: 14px;
     margin-top: 20px;
   }
@@ -284,164 +254,220 @@
 
 <nav>
   <a href="#top">🏠 Главная</a>
-  <a href="#about">О Даниле</a>
-  <a href="#facts">Факты</a>
-  <a href="#tiktok">Тик-ток</a>
+  <a href="#parts">Комплектующие</a>
+  <a href="#build">Сборка</a>
+  <a href="#calc">Калькулятор сборки</a>
   <a href="#games">Игры</a>
+  <a href="#tips">Советы</a>
+  <a href="#mistakes">Ошибки</a>
   <a href="#quiz">Тест</a>
-  <a href="#timer">Таймер</a>
 </nav>
 
 <section class="hero" id="top">
-  <div class="avatar">🏊‍♂️</div>
-  <h1>Данил Карасев</h1>
-  <p>14-летний пловец из Вичуги. Тренируется в «Дельфине», учится в 10-й школе, снимает тик-токи и играет в Rust, Fortnite и CS2.</p>
+  <div class="logo">🖥️</div>
+  <span class="badge">ВЕРСИЯ 4.0 PRO · ОБНОВЛЕНО 2026</span>
+  <h1>ПК Гид 4.0 Pro</h1>
+  <p>Супер крутой гид по компьютеру: как понять комплектующие, собрать ПК, не переплатить и не накосячить. От процессора до первой загрузки Windows.</p>
   <div class="cta">
-    <a href="#facts" class="btn-big">😄 Смешные факты</a>
-    <a href="#quiz" class="btn-ghost">🎯 Пройти тест</a>
+    <a href="#parts" class="btn-big">⚡ Начать изучение</a>
+    <a href="#calc" class="btn-ghost">🧮 Собрать свой ПК</a>
   </div>
-  <div class="scroll-hint">▼ листайте вниз</div>
 </section>
 
 <main>
 
-<section id="about">
-  <h2>👤 Знакомьтесь: Данил</h2>
+<section id="parts">
+  <h2>🧩 Комплектующие — что за что отвечает</h2>
+  <p>Компьютер — это команда из деталей. Каждая делает своё дело, и слабое звено тормозит всех.</p>
   <div class="cards">
-    <div class="card"><b>🎂 Кто он</b>Данил Карасев, 14 лет (2012 года рождения).</div>
-    <div class="card"><b>📍 Город</b>Вичуга, Ивановская область.</div>
-    <div class="card"><b>🏫 Школа</b>Учится в 10-й школе.</div>
-    <div class="card"><b>🏊 Спорт</b>Плавание, бассейн «Дельфин».</div>
-    <div class="card"><b>🎮 Игры</b>Rust, Fortnite и CS2.</div>
-    <div class="card"><b>📱 Тик-ток</b>avantisvo0d и usersnonatak.</div>
+    <div class="card"><b>🧠 Процессор (CPU)</b>Мозг ПК. Считает всё: игры, браузер, программы. Основные производители — Intel и AMD.</div>
+    <div class="card"><b>🎮 Видеокарта (GPU)</b>Рисует картинку в играх. Самая дорогая деталь в игровом ПК — обычно 40–50% всего бюджета.</div>
+    <div class="card"><b>📦 Материнская плата</b>Объединяет всё. Важно, чтобы сокет платы подходил к процессору.</div>
+    <div class="card"><b>💾 Оперативка (RAM)</b>Быстрая память для работы программ. Для игр сейчас норм — 16 ГБ, комфорт — 32 ГБ.</div>
+    <div class="card"><b>🗄️ SSD</b>Хранилище. Обязательно SSD, а не жёсткий диск — Windows и игры грузятся в разы быстрее.</div>
+    <div class="card"><b>🔌 Блок питания (БП)</b>Кормит всю систему. Не экономь: дешёвый БП может сжечь всё остальное.</div>
+    <div class="card"><b>❄️ Кулер</b>Охлаждает процессор. Без него ПК перегреется и будет тормозить.</div>
+    <div class="card"><b>📐 Корпус</b>Дом для всего. Смотри на продуваемость и место под видеокарту.</div>
   </div>
+  <div class="tipbox">💡 Правило баланса: не ставь супер-видеокарту со слабым процессором (и наоборот) — дорогая деталь будет простаивать.</div>
 </section>
 
-<section id="facts">
-  <h2>😄 Факты о Даниле</h2>
-  <div class="fact"><div class="dot">🥤</div><div><b>Жадина-колбасина на сборах.</b> На сборах Данил не поделился с Максом ни колой, ни чипсами. Макс до сих пор помнит. Наверное.</div></div>
-  <div class="fact"><div class="dot">💨</div><div><b>Мастер воздуханить.</b> Как говорит сам Максим — Данил обожает воздуханить. Воздушные замки — его стихия.</div></div>
-  <div class="fact"><div class="dot">🏫</div><div><b>10-я школа.</b> Учёба, уроки, друзья — всё происходит на территории десятой школы.</div></div>
-  <div class="fact"><div class="dot">🤣</div><div><b>Козни над Александром Ивановым.</b> Данил любит пошутить над Александром Ивановым. Жертва юмора не сдаётся!</div></div>
-  <div class="quotebox">«Не делился колой? Значит, тренировал силу воли!»</div>
+<section id="build">
+  <h2>🔧 Сборка — порядок действий</h2>
+  <p>Собрать ПК проще, чем кажется. Главное — не спешить и не давить с силой.</p>
+  <ol>
+    <li><b>Подготовь место.</b> Стол, хорошее освещение, зеркало/браслет от статики не обязателен, но касайся металла корпуса перед деталями.</li>
+    <li><b>Процессор в плату.</b> Найди метки (треугольнички) на CPU и сокете, совмести, аккуратно опусти, защёлкни рычаг.</li>
+    <li><b>Оперативка.</b> Открой защёлки, вставь планку до щелчка. Если планок две — ставь во 2-й и 4-й слоты (смотри инструкцию платы).</li>
+    <li><b>Кулер.</b> Нанеси термопасту горошинкой размером с рисовое зерно в центр CPU, закрепи кулер.</li>
+    <li><b>Блок питания.</b> Установи в корпус, подключи 24-pin к плате и 8-pin CPU.</li>
+    <li><b>SSD и видеокарта.</b> SSD — в слот M.2 или к SATA. Видеокарту — в верхний длинный слот PCIe до щелчка.</li>
+    <li><b>Провода передней панели.</b> Пины POWER, RESET, USB — сверяйся с инструкцией платы.</li>
+    <li><b>Первый запуск.</b> Монитор в видеокарту (не в материнку!), включай. Если вентиляторы крутятся и есть картинка — победа 🎉</li>
+  </ol>
+  <div class="warnbox">⚠️ Никогда не вставляй детали «с силой». Процессор и видеокарта встают без усилия — если не лезет, значит, не с той стороны.</div>
 </section>
 
-<section id="tiktok">
-  <h2>📱 Тик-ток Данила</h2>
-  <div class="cards">
-    <div class="card"><b>🎬 avantisvo0d</b>Основной аккаунт.</div>
-    <div class="card"><b>🎬 usersnonatak</b>Второй аккаунт.</div>
+<section id="calc">
+  <h2>🧮 Калькулятор сборки</h2>
+  <p>Выбери бюджет и задачи — соберу тебе примерную конфигурацию.</p>
+  <div class="panel">
+    <div class="calcbox">
+      <div>
+        <label>Твой бюджет</label>
+        <select id="budget">
+          <option value="40000">До 45 000 ₽ — старт</option>
+          <option value="70000" selected>60–80 000 ₽ — золотая середина</option>
+          <option value="120000">100–140 000 ₽ — серьёзный уровень</option>
+          <option value="200000">От 180 000 ₽ — топ</option>
+        </select>
+      </div>
+      <div>
+        <label>Для чего ПК</label>
+        <select id="usage">
+          <option value="game" selected>Игры</option>
+          <option value="study">Учёба и браузер</option>
+          <option value="work">Монтаж и работа</option>
+        </select>
+      </div>
+      <button onclick="calc()">🚀 Собрать конфигурацию</button>
+      <div id="calcResult"></div>
+    </div>
   </div>
-  <div class="tipbox">💡 Подпишись, чтобы не пропустить новые видео!</div>
 </section>
 
 <section id="games">
-  <h2>🎮 Любимые игры</h2>
-  <div class="cards">
-    <div class="card"><b>🪓 Rust</b>Хардкорное выживание. База под контролем и нервы покрепче.</div>
-    <div class="card"><b>🪂 Fortnite</b>Батл-рояль с постройками. Реакция решает всё.</div>
-    <div class="card"><b>🎯 CS2</b>Легендарный тактический шутер. Меткость и командная игра.</div>
-  </div>
-  <div class="tipbox">💡 Сессия после тренировки — отдых, а вместо тренировки — проблема. Держим баланс!</div>
+  <h2>🎮 Что потянет ПК в играх</h2>
+  <p>Прикидка по уровню сборки (в настройках «высокие», Full HD):</p>
+  <table>
+    <tr><th>Уровень сборки</th><th>Пример видеокарты</th><th>Что идёт комфортно</th></tr>
+    <tr><td>Старт (~45к)</td><td>RTX 3050 / RX 6600</td><td>Fortnite, CS2, GTA5, Standoff 2 (на любом ПК 😄)</td></tr>
+    <tr><td>Средний (~75к)</td><td>RTX 4060 / RX 7600</td><td>Cyberpunk 2077 (высокие, без трейсинга), Warzone</td></tr>
+    <tr><td>Серьёзный (~120к)</td><td>RTX 4070 / RX 7800 XT</td><td>Всё в 2K на максималках, трейсинг в большинства играх</td></tr>
+    <tr><td>Топ (от 180к)</td><td>RTX 4080/4090 и выше</td><td>Всё в 4K, включая трассировку лучей</td></tr>
+  </table>
+  <div class="tipbox">💡 Играет через Steam? Проверь системные требования игры на её странице — там прямо написано, какая видеокарта нужна.</div>
+</section>
+
+<section id="tips">
+  <h2>💎 Советы про-уровня</h2>
+  <ul>
+    <li><b>Бюджет в видеокарту.</b> В игровом ПК GPU важнее процессора. Слабый CPU с мощной видеокартой лучше, чем наоборот.</li>
+    <li><b>Две планки памяти лучше одной.</b> 2×8 ГБ работают быстрее одной 16 ГБ благодаря двухканальному режиму.</li>
+    <li><b>SSD NVMe.</b> Бери M.2 NVMe — стоит почти как SATA, а быстрее в разы.</li>
+    <li><b>БП с запасом.</b> Считай мощность системы и добавляй 20–30% запаса.</li>
+    <li><b>Не гонись за «гигагерцами».</b> У процессора важны ядр/потоки и поколение, а не только частота.</li>
+    <li><b>Провода в корпусе.</b> Убирай провода за заднюю стенку — воздух лучше ходит, выглядит топово.</li>
+    <li><b>Сравнивай цены.</b> Одна и та же видеокарта у разных продавцов может отличаться на 5–10 тысяч.</li>
+  </ul>
+</section>
+
+<section id="mistakes">
+  <h2>🚫 Топ ошибок новичков</h2>
+  <ol>
+    <li><b>Купил процессор без кулера в комплекте.</b> Всегда проверяй, идёт ли охлаждение в наборе.</li>
+    <li><b>Забыл включить питание видеокарты.</b> Экран чёрный, вентиляторы крутятся — первый подозреваемый: 8-pin GPU.</li>
+    <li><b>Монитор воткнут в материнку.</b> Картинки нет, хотя ПК работает. Монитор — в видеокарту!</li>
+    <li><b>Планка RAM не до конца вставлена.</b> ПК запускается, но экрана нет. Дожми до щелчка с двух сторон.</li>
+    <li><b>Дешёвый БП на мощную систему.</b> Экономия, которая может убить всё железо.</li>
+    <li><b>Не снял защитную плёнку с подошвы кулера.</b> Классика: ПК греется, а под кулером — пластинка 😅</li>
+  </ol>
 </section>
 
 <section id="quiz">
-  <h2>🎯 Тест про Данила</h2>
-  <p>10 вопросов. Настоящий друг ответит на все!</p>
+  <h2>🎯 Тест: насколько ты прокачан в ПК</h2>
+  <p>8 вопросов. Счётчик считает результат!</p>
   <div class="panel">
-    <h3>1. В каком году родился Данил?</h3>
-    <button class="ansbtn" onclick="check(1,this,true)">2012</button>
-    <button class="ansbtn" onclick="check(1,this,false)">2005</button>
-    <button class="ansbtn" onclick="check(1,this,false)">2020</button>
+    <h3>1. Что важнее для игр в игровом ПК?</h3>
+    <button class="ansbtn" onclick="check(1,this,true)">Видеокарта</button>
+    <button class="ansbtn" onclick="check(1,this,false)">DVD-привод</button>
+    <button class="ansbtn" onclick="check(1,this,false)">Корпусные подсветки</button>
     <p id="r1"></p>
-    <h3>2. Сколько лет Данилу?</h3>
-    <button class="ansbtn" onclick="check(2,this,false)">10</button>
-    <button class="ansbtn" onclick="check(2,this,true)">14</button>
-    <button class="ansbtn" onclick="check(2,this,false)">17</button>
+    <h3>2. Сколько оперативки — норм для игр сейчас?</h3>
+    <button class="ansbtn" onclick="check(2,this,false)">4 ГБ</button>
+    <button class="ansbtn" onclick="check(2,this,true)">16 ГБ</button>
+    <button class="ansbtn" onclick="check(2,this,false)">512 МБ</button>
     <p id="r2"></p>
-    <h3>3. В какой школе он учится?</h3>
-    <button class="ansbtn" onclick="check(3,this,true)">В 10-й</button>
-    <button class="ansbtn" onclick="check(3,this,false)">В 1-й</button>
-    <button class="ansbtn" onclick="check(3,this,false)">В 100-й</button>
+    <h3>3. Какая память для системы лучше?</h3>
+    <button class="ansbtn" onclick="check(3,this,false)">Жёсткий диск (HDD)</button>
+    <button class="ansbtn" onclick="check(3,this,true)">SSD NVMe</button>
+    <button class="ansbtn" onclick="check(3,this,false)">Дискета</button>
     <p id="r3"></p>
-    <h3>4. Чем Данил не поделился с Максом на сборах?</h3>
-    <button class="ansbtn" onclick="check(4,this,true)">Колой и чипсами</button>
-    <button class="ansbtn" onclick="check(4,this,false)">Плавательными очками</button>
-    <button class="ansbtn" onclick="check(4,this,false)">Шапочкой для бассейна</button>
+    <h3>4. Куда втыкать монитор, если есть видеокарта?</h3>
+    <button class="ansbtn" onclick="check(4,this,true)">В видеокарту</button>
+    <button class="ansbtn" onclick="check(4,this,false)">В материнку</button>
+    <button class="ansbtn" onclick="check(4,this,false)">В блок питания</button>
     <p id="r4"></p>
-    <h3>5. Что Данил любит делать по словам Максима?</h3>
-    <button class="ansbtn" onclick="check(5,this,false)">Бегать кроссы</button>
-    <button class="ansbtn" onclick="check(5,this,true)">Воздуханить</button>
-    <button class="ansbtn" onclick="check(5,this,false)">Делать уроки</button>
+    <h3>5. Зачем термопаста?</h3>
+    <button class="ansbtn" onclick="check(5,this,false)">Чтобы процессор блестел</button>
+    <button class="ansbtn" onclick="check(5,this,false)">Для крепления деталей</button>
+    <button class="ansbtn" onclick="check(5,this,true)">Чтобы передавать тепло от CPU к кулеру</button>
     <p id="r5"></p>
-    <h3>6. Над кем Данил любит шутить?</h3>
-    <button class="ansbtn" onclick="check(6,this,false)">Над директором школы</button>
-    <button class="ansbtn" onclick="check(6,this,false)">Над тренером</button>
-    <button class="ansbtn" onclick="check(6,this,true)">Над Александром Ивановым</button>
+    <h3>6. Почему две планки по 8 ГБ быстрее одной на 16?</h3>
+    <button class="ansbtn" onclick="check(6,this,true)">Двухканальный режим</button>
+    <button class="ansbtn" onclick="check(6,this,false)">Просто магия</button>
+    <button class="ansbtn" onclick="check(6,this,false)">Они светятся</button>
     <p id="r6"></p>
-    <h3>7. В какой игре надо выживать и строить базу?</h3>
-    <button class="ansbtn" onclick="check(7,this,false)">CS2</button>
-    <button class="ansbtn" onclick="check(7,this,false)">Fortnite</button>
-    <button class="ansbtn" onclick="check(7,this,true)">Rust</button>
+    <h3>7. Что будет с дешёвым БП на мощной системе?</h3>
+    <button class="ansbtn" onclick="check(7,this,true)">Риск сгореть и потянуть за собой детали</button>
+    <button class="ansbtn" onclick="check(7,this,false)">Ничего, лишь бы влезал</button>
+    <button class="ansbtn" onclick="check(7,this,false)">ПК станет быстрее</button>
     <p id="r7"></p>
-    <h3>8. Как называется один из тик-токов Данила?</h3>
-    <button class="ansbtn" onclick="check(8,this,true)">avantisvo0d</button>
-    <button class="ansbtn" onclick="check(8,this,false)">danil_pro</button>
-    <button class="ansbtn" onclick="check(8,this,false)">karasev2012</button>
+    <h3>8. ПК включается, но экрана нет. Первым делом проверяем...</h3>
+    <button class="ansbtn" onclick="check(8,this,false)">Цвет RGB-подсветки</button>
+    <button class="ansbtn" onclick="check(8,this,true)">Кабель монитора и питание видеокарты</button>
+    <button class="ansbtn" onclick="check(8,this,false)">Наличие интернета</button>
     <p id="r8"></p>
-    <h3>9. А как называется его второй тик-ток?</h3>
-    <button class="ansbtn" onclick="check(9,this,false)">avantisvo0d</button>
-    <button class="ansbtn" onclick="check(9,this,false)">usersniper</button>
-    <button class="ansbtn" onclick="check(9,this,true)">usersnonatak</button>
-    <p id="r9"></p>
-    <h3>10. В каком бассейне тренируется Данил?</h3>
-    <button class="ansbtn" onclick="check(10,this,true)">«Дельфин»</button>
-    <button class="ansbtn" onclick="check(10,this,false)">«Океан»</button>
-    <button class="ansbtn" onclick="check(10,this,false)">«Акулёнок»</button>
-    <p id="r10"></p>
-  </div>
-</section>
-
-<section id="timer">
-  <h2>⏱️ Таймер заплыва</h2>
-  <div class="timerbox">
-    <div id="timer">00:00</div>
-    <button onclick="startTimer()">▶ Старт</button>
-    <button onclick="stopTimer()">⏸ Пауза</button>
-    <button onclick="resetTimer()">🔄 Сброс</button>
+    <div class="scorebox" id="score">Правильных ответов: 0 из 0</div>
+    <button onclick="resetScore()">🔄 Сбросить счёт</button>
   </div>
 </section>
 
 </main>
 
-<footer>Сайт о Даниле Карасеве · 2026 🖤<br>Вичуга → 10-я школа → «Дельфин» → большие старты 🚀</footer>
+<footer>ПК Гид 4.0 Pro · 2026 🖥️<br>От процессора до первой загрузки — собрал, запустил, победил 🚀</footer>
 
 </div>
 
 <script>
+var score = 0, total = 0;
 function check(n, btn, right) {
   var r = document.getElementById('r' + n);
+  if (r.textContent !== '') return;
+  total++;
   if (right) {
+    score++;
     r.textContent = '✅ Верно!';
     r.className = 'ok';
   } else {
-    r.textContent = '❌ Не совсем. Попробуйте другой вариант!';
+    r.textContent = '❌ Не совсем. Вспомни раздел выше!';
     r.className = 'bad';
   }
+  document.getElementById('score').textContent = 'Правильных ответов: ' + score + ' из ' + total;
 }
-var seconds = 0, timerOn = false, timerInt = null;
-function showTimer() {
-  var m = Math.floor(seconds / 60), s = seconds % 60;
-  document.getElementById('timer').textContent =
-    (m < 10 ? '0' : '') + m + ':' + (s < 10 ? '0' : '') + s;
+function resetScore() {
+  score = 0; total = 0;
+  for (var i = 1; i <= 8; i++) document.getElementById('r' + i).textContent = '';
+  document.getElementById('score').textContent = 'Правильных ответов: 0 из 0';
 }
-function startTimer() {
-  if (timerOn) return;
-  timerOn = true;
-  timerInt = setInterval(function(){ seconds++; showTimer(); }, 1000);
+
+function calc() {
+  var b = document.getElementById('budget').value;
+  var u = document.getElementById('usage').value;
+  var out = '';
+  if (u === 'study') {
+    out = '📚 Учёба: процессор с встроенной графикой (Ryzen 5 5600G), 16 ГБ RAM, SSD 512 ГБ, простенький БП. Видеокарту можно не покупать вообще — бюджет не нужен!';
+  } else if (b === '40000') {
+    out = '🎮 Старт: Ryzen 5 5500 / i3-12100F + RTX 3050 или RX 6600, 16 ГБ (2×8), SSD 512 ГБ, БП 550 Вт. Fortnite и GTA5 полетят!';
+  } else if (b === '70000') {
+    out = '🎯 Золотая середина: Ryzen 5 5600 / i5-12400F + RTX 4060 или RX 7600, 16–32 ГБ, SSD 1 ТБ NVMe, БП 650 Вт. Комфорт в Full HD на высоких.';
+  } else if (b === '120000') {
+    out = '💪 Серьёзный уровень: Ryzen 7 5700X / i5-13400F + RTX 4070 или RX 7800 XT, 32 ГБ, SSD 1–2 ТБ, БП 750 Вт. 2K на максималках.';
+  } else {
+    out = '👑 Топ: Ryzen 7 7800X3D + RTX 4080/4090, 32 ГБ DDR5, SSD 2 ТБ NVMe, БП 850–1000 Вт, хороший кулер и продуваемый корпус. 4K, трейсинг, всё летит.';
+  }
+  document.getElementById('calcResult').textContent = out;
 }
-function stopTimer() { timerOn = false; clearInterval(timerInt); }
-function resetTimer() { stopTimer(); seconds = 0; showTimer(); }
 
 window.addEventListener('scroll', function() {
   document.querySelectorAll('section').forEach(function(sec) {
